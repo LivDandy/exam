@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/user.css' %}">
+    <style>
+    
+    </style>
+</head>
+    <body>
+        <h2>Users</h2>
+        <table>
+            <tr>
+                <th class='col-md-1'>id</th>
+                <th class='col-md-3'>Full Name</th>
+                <th class='col-md-4'>Email</th>
+                <th class='col-md-5'>Created At</th>
+                <th class='col-md-2'>Actions</th>
+            </tr>
+        {% for user in users %}
+            <tr>
+                <td class='col-md-1'>{{ user.id }}</td>
+                <td class='col-md-3'>{{ user.first_name }} {{ user.last_name }}</td>
+                <td class='col-md-4'>{{ user.email }}</td>
+                <td class='col-md-5'>{{ user.created_at }}</td>
+                <td class='col-md-2'> <a href = '/users/{{ user.id }}/'>Show</a>  <a href = '/users/{{ user.id }}/edit/'>Edit</a>  <a href = '/users/{{ user.id }}/delete/'>Delete</a> </td>
+            </tr>
+        {% endfor %}
+        <a class="bottom" href = '/users/new/'>Add a new user</a>
+        
+    </body>
+</html>

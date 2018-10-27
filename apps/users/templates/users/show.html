@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Show</title>
+    <style>
+        .buddies{
+            height: 150px;
+            width: 350px;
+        }
+        h4{
+            position: absolute;
+            bottom: 500px;
+            height: 25px;
+            width: 600px;
+        }
+    </style>
+    </head>
+    <body>
+        
+        <h2>User {{one_user.id }}</h2>
+       
+            <div class="buddies">
+                <h3>Full name: {{ one_user.first_name }} {{ one_user.last_name }}</h3>
+                <h3>Email: {{ one_user.email }}</h3>
+                <h3>Created at: {{ one_user.created_at }}</h3>
+            </div>    
+        
+        <h4><a href = '/users/{{ one_user.id }}/edit/'>Edit</a> | <a href = '/users/{{ one_user.id }}/delete/'>Delete</a></h4>
+        
+    </body>
+</html>
